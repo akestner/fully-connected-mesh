@@ -5,6 +5,7 @@ This is a [Terraform-based](https://www.terraform.io/) project to configure a "f
 ## Mesh Structure
 
 This is a diagram of the structure of the mesh this project creates
+
 [![2tvVTu.md.png](https://iili.io/2tvVTu.md.png)](https://freeimage.host/i/2tvVTu)
 
 ## Getting Started
