@@ -22,6 +22,7 @@ resource "aws_appmesh_virtual_node" "node-c" {
 
     backend {
       virtual_service {
+        // have to specify service name as a string to avoid Terraform complaining about cyclic graph
         virtual_service_name = "service-d"
       }
     }
