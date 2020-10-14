@@ -25,5 +25,17 @@ resource "aws_appmesh_virtual_node" "node-a" {
         virtual_service_name = aws_appmesh_virtual_service.service-c.name
       }
     }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-d.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-e.name
+      }
+    }
   }
 }

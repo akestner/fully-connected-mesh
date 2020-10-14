@@ -16,6 +16,18 @@ resource "aws_appmesh_virtual_node" "node-d" {
   spec {
     backend {
       virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-b.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-c.name
+      }
+    }
+
+    backend {
+      virtual_service {
         virtual_service_name = aws_appmesh_virtual_service.service-e.name
       }
     }

@@ -1,12 +1,6 @@
 # Fully Connected Mesh 
 
-This is a [Terraform-based](https://www.terraform.io/) project to configure a "fully-connected" App Mesh mesh.. By fully-connected, we mean that this is a mesh where there is far more service-to-servce (or east-west) traffic than ingress or egress (or north-south) traffic.
-
-## Mesh Structure
-
-This is a diagram of the structure of the mesh this project creates
-
-[![2tvVTu.md.png](https://iili.io/2tvVTu.md.png)](https://freeimage.host/i/2tvVTu)
+This is a [Terraform-based](https://www.terraform.io/) project to configure a "fully-connected" App Mesh mesh. By "fully-connected", we mean that this is a mesh where there is far more service-to-servce (or east-west) traffic than ingress or egress (or north-south) traffic. In this mesh, `Service A` acts as an ingress service, behind which every other service is inter-conntected.
 
 ## Getting Started
 

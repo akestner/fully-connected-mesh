@@ -57,18 +57,72 @@ resource "aws_appmesh_route" "service-e-route" {
 resource "aws_appmesh_virtual_node" "node-e-v1" {
   mesh_name = aws_appmesh_mesh.fully-connected-mesh.name
   name = "node-e-v1"
-  spec {}
+  spec {
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-b.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-c.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-d.name
+      }
+    }
+  }
 }
 
 resource "aws_appmesh_virtual_node" "node-e-v2" {
   mesh_name = aws_appmesh_mesh.fully-connected-mesh.name
   name = "node-e-v2"
-  spec {}
+  spec {
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-b.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-c.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-d.name
+      }
+    }
+  }
 }
 
 
 resource "aws_appmesh_virtual_node" "node-e-v3" {
   mesh_name = aws_appmesh_mesh.fully-connected-mesh.name
   name = "node-e-v3"
-  spec {}
+  spec {
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-b.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-c.name
+      }
+    }
+
+    backend {
+      virtual_service {
+        virtual_service_name = aws_appmesh_virtual_service.service-d.name
+      }
+    }
+  }
 }
