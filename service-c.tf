@@ -14,6 +14,20 @@ resource "aws_appmesh_virtual_node" "node-c" {
   mesh_name = aws_appmesh_mesh.fully-connected-mesh.name
   name = "node-c"
   spec {
+    listener {
+      port_mapping {
+        port = 80
+        protocol = "http"
+      }
+    }
+
+    service_discovery {
+      aws_cloud_map {
+        namespace_name = aws_service_discovery_private_dns_namespace.fully-connected.name
+        service_name = "node-c"
+      }
+    }
+
     backend {
       virtual_service {
         virtual_service_name = aws_appmesh_virtual_service.service-b.name

@@ -14,6 +14,19 @@ resource "aws_appmesh_virtual_node" "node-a" {
   mesh_name = aws_appmesh_mesh.fully-connected-mesh.name
   name = "node-a"
   spec {
+    listener {
+      port_mapping {
+        port = 80
+        protocol = "http"
+      }
+    }
+
+    service_discovery {
+      dns {
+        hostname = "fully-connected.com"
+      }
+    }
+
     backend {
       virtual_service {
         virtual_service_name = aws_appmesh_virtual_service.service-b.name
